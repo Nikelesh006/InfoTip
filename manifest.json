@@ -1,0 +1,16 @@
+{
+  "name": "InfoTip Chatbot",
+  "short_name": "InfoTip",
+  "description": "Your Coding Assistant by Nikelesh",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0066ff",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

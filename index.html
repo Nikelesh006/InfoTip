@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>InfoTip - Your Coding Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Markdown Parser & DOMPurify -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2>InfoTip</h2>
+                <button id="close-sidebar" class="mobile-only" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <button id="new-chat-btn" class="action-btn primary"><i class="fas fa-plus"></i> New Chat</button>
+            <button id="redact-btn" class="action-btn"><i class="fas fa-eraser"></i> Redact PII</button>
+            <button id="export-btn" class="action-btn"><i class="fas fa-download"></i> Export Chat</button>
+            
+            <div class="activity-section">
+                <h3>Activity</h3>
+                <ul id="history-list"></ul>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>Built by <strong>Nikelesh</strong></p>
+                <p class="subtitle">Chennai Developer</p>
+                <div class="social-links">
+                    <a href="https://github.com/nikelesh" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://nikelesh.dev" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-nav">
+                <button id="open-sidebar" class="mobile-only" aria-label="Open Sidebar"><i class="fas fa-bars"></i></button>
+                <h1 class="mobile-title">InfoTip</h1>
+            </header>
+            
+            <!-- Home View -->
+            <div id="home-view" class="home-view">
+                <div class="welcome-container">
+                    <div class="logo-placeholder"><i class="fas fa-laptop-code"></i></div>
+                    <h1>Welcome to InfoTip</h1>
+                    <p>Your intelligent coding assistant powered by GPT-4o-mini. Safe, fast, and built for developers.</p>
+                    <button id="start-chatting-btn" class="primary-btn">Start Chatting</button>
+                </div>
+            </div>
+
+            <!-- Chat View -->
+            <div id="chat-view" class="chat-view hidden">
+                <div id="chat-messages" class="chat-messages">
+                    <!-- Messages will appear here -->
+                </div>
+                
+                <div class="input-container">
+                    <div class="input-box">
+                        <textarea id="chat-input" placeholder="Ask InfoTip anything..." rows="1"></textarea>
+                        <button id="send-btn" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="disclaimer">InfoTip can make mistakes. Consider verifying important code or information.</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="toast-container"></div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
