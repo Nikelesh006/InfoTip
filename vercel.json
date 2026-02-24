@@ -15,5 +15,6 @@
       "src": "/(.*)",
       "dest": "/InfoTip/$1"
     }
-  ]
+  ],
+  "outputDirectory": "InfoTip"
 }
